@@ -1,0 +1,27 @@
+.program-window {
+	height: calc(100vh - 122px);
+	border: 1px solid #ccc;
+  	border-radius: 10px;
+  	overflow: hidden;
+}
+.program-body {
+	overflow: hidden;
+}
+.program-frame {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+}
+.program-bar {
+	height: 74px;
+	background-color: whitesmoke;
+	border: 1px solid #ccc;
+  	border-radius: 10px;
+  	overflow: hidden;
+}
+.toolbar {
+	height: 74px;
+	background-color: white;
+	border: 1px solid #ccc;
+  	overflow: hidden;
+}
