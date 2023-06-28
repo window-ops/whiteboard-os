@@ -95,10 +95,6 @@ function Restart() {
   window.location.reload()
 }
 
-function ViewSource() {
-  
-}
-
 function CancelShutdownOpenWhiteboard() {
   document.getElementById("ShutdownOptionsMenu").style.display = "none";
   OpenWhiteboard()
