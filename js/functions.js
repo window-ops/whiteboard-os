@@ -29,6 +29,7 @@ function CloseWebView() {
 function OpenWhiteboard() {
   document.getElementById("Whiteboard").style.display = "block";
   document.getElementById("CloseWebView").style.display = "block";
+  document.getElementById("OpenWhiteboard").style.display = "none";
 
   if (document.getElementById("WebView").style.display == "block") {
     document.getElementById("OpenWebView").style.display = "none";
@@ -36,20 +37,19 @@ function OpenWhiteboard() {
   else {
     document.getElementById("OpenWebView").style.display = "block";
   }
-  document.getElementById("OpenWhiteboard").style.display = "none";
 }
 
 function OpenWebView() {
   document.getElementById("WebView").style.display = "block";
   document.getElementById("CloseWhiteboard").style.display = "block";
+  document.getElementById("OpenWebView").style.display = "none";
   
-  if (document.getElementById("Whiteboard").style.display == "none") {
-    document.getElementById("OpenWhiteboard").style.display = "block";
-  }
-  else if (document.getElementById("Whiteboard").style.display != "none") {
+  if (document.getElementById("Whiteboard").style.display == "block") {
     document.getElementById("OpenWhiteboard").style.display = "none";
   }
-  document.getElementById("OpenWebView").style.display = "none";
+  else if (document.getElementById("Whiteboard").style.display == "none") {
+    document.getElementById("OpenWhiteboard").style.display = "block";
+  }
 }
 
 function Navigate() {
