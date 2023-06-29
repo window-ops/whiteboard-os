@@ -46,7 +46,7 @@ function OpenWebView() {
   if (document.getElementById("Whiteboard").style.display == "none") {
     document.getElementById("OpenWhiteboard").style.display = "block";
   }
-  else if (document.getElementById("Whiteboard").style.display == "block") {
+  else if (document.getElementById("Whiteboard").style.display != "none") {
     document.getElementById("OpenWhiteboard").style.display = "none";
   }
   document.getElementById("OpenWebView").style.display = "none";
