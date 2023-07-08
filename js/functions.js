@@ -43,13 +43,7 @@ function OpenWebView() {
   document.getElementById("WebView").style.display = "block";
   document.getElementById("CloseWhiteboard").style.display = "block";
   document.getElementById("OpenWebView").style.display = "none";
-  
-  if (document.getElementById("Whiteboard").style.display == "block") {
-    document.getElementById("OpenWhiteboard").style.display = "none";
-  }
-  else if (document.getElementById("Whiteboard").style.display == "none") {
-    document.getElementById("OpenWhiteboard").style.display = "block";
-  }
+  document.getElementById("OpenWhiteboard").style.display = "none";
 }
 
 function Navigate() {
