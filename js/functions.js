@@ -11,7 +11,6 @@ function CloseWhiteboard() {
     document.getElementById("OpenWhiteboard").style.display = "block";
   }
 }
-
 function CloseWebView() {
   document.getElementById("WebView").style.display = "none";
   document.getElementById("CloseWhiteboard").style.display = "none";
@@ -25,7 +24,6 @@ function CloseWebView() {
     document.getElementById("OpenWhiteboard").style.display = "block";
   }
 }
-
 function OpenWhiteboard() {
   document.getElementById("Whiteboard").style.display = "block";
   document.getElementById("CloseWebView").style.display = "block";
@@ -38,14 +36,12 @@ function OpenWhiteboard() {
     document.getElementById("OpenWebView").style.display = "block";
   }
 }
-
 function OpenWebView() {
   document.getElementById("WebView").style.display = "block";
   document.getElementById("CloseWhiteboard").style.display = "block";
   document.getElementById("OpenWebView").style.display = "none";
   document.getElementById("OpenWhiteboard").style.display = "none";
 }
-
 function Navigate() {
   let url = document.getElementById('URLBAR').value.trim();
   const iframe = document.getElementById('FRAME');
@@ -59,7 +55,6 @@ function Navigate() {
 
   iframe.src = url;
 }
-
 function ShutdownOptions() {
   document.getElementById("ShutdownOptionsMenu").style.display = "block";
   document.getElementById("Whiteboard").style.display = "none";
@@ -69,23 +64,19 @@ function ShutdownOptions() {
 function Shutdown() {
   window.close()
 }
-
 function Restart() {
   window.location.reload()
 }
-
 function CancelShutdownOpenWhiteboard() {
   document.getElementById("ShutdownOptionsMenu").style.display = "none";
   OpenWhiteboard()
   CloseWebView()
 }
-
 function CancelShutdownOpenWebView() {
   document.getElementById("ShutdownOptionsMenu").style.display = "none";
   CloseWhiteboard()
   OpenWebView()
 }
-
 function CancelShutdownOpenBoth() {
   document.getElementById("ShutdownOptionsMenu").style.display = "none";
   OpenWhiteboard()
