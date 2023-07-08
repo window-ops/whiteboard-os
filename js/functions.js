@@ -60,7 +60,6 @@ function ShutdownOptions() {
   document.getElementById("Whiteboard").style.display = "none";
   document.getElementById("WebView").style.display = "none";
 }
-
 function Shutdown() {
   window.close()
 }
