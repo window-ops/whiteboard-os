@@ -76,6 +76,7 @@ function CancelShutdownOpenWebView() {
   document.getElementById("ShutdownOptionsMenu").style.display = "none";
   CloseWhiteboard()
   OpenWebView()
+  document.getElementById("OpenWhiteboard").style.display = "block";
 }
 function CancelShutdownOpenBoth() {
   document.getElementById("ShutdownOptionsMenu").style.display = "none";
