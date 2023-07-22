@@ -1,4 +1,4 @@
-LICENSE for theme, softui, nucleosvg and nucleoicons.
+LICENSE for theme, softui.
 
 MIT License
 
