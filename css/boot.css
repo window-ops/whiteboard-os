@@ -12,14 +12,11 @@
   opacity: 1; /* set initial opacity to 1 */
   transition: opacity 0.5s ease-out; /* add transition animation for opacity */
 }
-
-
 .status {
   font-size: 2rem;
   color: #fff;
   margin-right: 1rem;
 }
-
 .spinner {
   border: 0.4rem solid #fff;
   border-top: 0.4rem solid transparent;
@@ -28,13 +25,11 @@
   height: 3rem;
   animation: spin 1s linear infinite;
 }
-
 .message {
   font-size: 2rem;
   color: #fff;
   margin-left: 1rem;
 }
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
