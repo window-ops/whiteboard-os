@@ -12,4 +12,4 @@ What sets Whiteboard OS apart from other IWBs is that you can use Whiteboard and
 
 ## Whiteboard OS TV
 
-This is a simplified UI that optimizes screen space and is separate from the main application.
+Whiteboard OS TV is a simplified UI that optimizes screen space and is separate from the main application.
