@@ -9,3 +9,7 @@ The Whiteboard program is a canvas-based tool that allows you to present ideas, 
 In addition to Whiteboard, Whiteboard OS also includes Web View, a tool that allows you to input a website URL and display it within the Whiteboard OS interface. With Web View, you can easily bring up websites, online resources, and other online content that can enhance your lesson plans, presentations, or lectures.
 
 What sets Whiteboard OS apart from other IWBs is that you can use Whiteboard and Web View side by side. This means that you can switch seamlessly between the two programs without having to close one and open the other, providing a fluid teaching experience.
+
+## Whiteboard OS TV
+
+This is a simplified UI that optimizes screen space and is separate from the main application.
