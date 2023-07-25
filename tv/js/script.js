@@ -29,7 +29,7 @@ function openApp(app) {
   const lightboxContent = document.createElement('div');
   lightboxContent.classList.add('lightbox-content');
   lightboxContent.innerHTML = `
-    <iframe class="app-frame" src="${appUrl}" frameborder="0"></iframe>
+    <iframe class="app-frame" src="${appUrl}" frameborder="0" referrerpolicy="no-referrer" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
   `;
   lightbox.appendChild(lightboxContent);
   const titleBar = document.createElement('div');
