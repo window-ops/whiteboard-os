@@ -1,89 +1,36 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Whiteboard OS</title>
-  <link rel="stylesheet" href="./css/softui.css">
-  <link rel="stylesheet" href="./css/theme.css">
-  <link rel="stylesheet" href="./css/boot.css">
-  <link rel="stylesheet" href="./css/program-specific.css">
-  <script src="./js/functions.js"></script>
-  <script src="./js/boot.js"></script>
-</head>
-<body>
-  <div class="main-content" id="panel">
-    <div class="container-fluid pt-3">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Whiteboard OS</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/boot.css">
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Whiteboard OS</h1>
+    </header>
+    <main>
       <div id="bootup">
         <div class="spinner"></div>
         <div class="status">&nbsp;Booting Whiteboard OS...</div>
         <div class="status">&nbsp;Please Wait...</div>
       </div>
-      <div class="row">
-        <div class="col" id="Whiteboard">
-          <div class="alert program-bar">
-            <div class="row">
-              <div class="col">
-                <h4 class="float-begin">Whiteboard</h4>
-              </div>
-              <div class="col">
-                <a class="float-end btn btn-primary mb-4" id="CloseWhiteboard" style="display: none;" onclick="CloseWhiteboard()">X</a>
-                <a class="float-end btn btn-primary mb-4" id="OpenWebView" style="margin-right: 10px;" onclick="OpenWebView()">Open Web View</a>
-                <a class="float-end btn btn-primary mb-4" id="ShutdownOptions" style="margin-right: 10px;" onclick="ShutdownOptions()">Shutdown Options</a>
-              </div>
-            </div>
-          </div>
-          <div class="card program-window">
-            <div class="card-body program-body">
-              <iframe class="program-frame" src="./depedencies/whiteboard/interface/index.html"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="col" id="WebView" style="display: none;">
-          <div class="alert program-bar">
-            <div class="row">
-              <div class="col">
-                <h4 class="float-begin">Web View</h4>
-              </div>
-              <div class="col">
-                <a class="float-end btn btn-primary mb-4" id="CloseWebView" onclick="CloseWebView()">X</a>
-                <a class="float-end btn btn-primary mb-4" id="OpenWhiteboard" style="margin-right: 10px; display: none;" onclick="OpenWhiteboard()">Open Whiteboard</a>
-              </div>
-            </div>
-          </div>
-          <div class="card program-window">
-            <div class="alert toolbar">
-              <div class="row">
-                <div class="col">
-                  <div class="input-group mb-4">
-                    <input class="form-control" type="text" id="URLBAR" style="max-height: 41px;" placeholder="Type the URL you want to present..." referrerpolicy="no-referrer" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts">
-                    <div class="input-group-append">
-                      <a class="btn btn-primary" style="margin-left: 11px" onclick="Navigate()">Navigate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body program-body">
-              <iframe class="program-frame" src="" id="FRAME"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="col" id="ShutdownOptionsMenu" style="display: none;">
-          <div class="card program-window col-sm-12 d-flex justify-content-center align-items-center" style="height: calc(100vh - 32px);">
-            <div class="alert program-bar">
-              <h4>Shutdown Options</h4>
-            </div>
-            <div class="alert program-bar">
-              <a class="btn btn-primary mb-4" id="Shutdown" style="margin-right: 10px;" onclick="Shutdown()">Shutdown</a>
-              <a class="btn btn-primary mb-4" id="Restart" style="margin-right: 10px;" onclick="Restart()">Restart</a>
-            </div>
-            <div class="alert program-bar">
-              <a class="btn btn-primary mb-4" id="Cancel" style="margin-right: 10px;" onclick="CancelShutdownOpenWhiteboard()">Cancel (Open Whiteboard)</a>
-              <a class="btn btn-primary mb-4" id="Cancel" onclick="CancelShutdownOpenBoth()">Cancel (Open Both)</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+      <a class="app" tabindex="0" data-url="./whiteboard/interface/index.html" onclick="openApp(this)">
+        <h2>Whiteboard</h2>
+        <p>A canvas-based tool that allows you to present ideas, concepts, and information with ease.</p>
+      </a>
+      <a class="app" tabindex="0" data-url="./webview/index.html" onclick="openApp(this)">
+        <h2>Web View</h2>
+        <p>Web View is a tool where you can easily bring up websites, online resources, and other online content that can enhance your lesson plans, presentations, or lectures.</p>
+      </a>
+      <a class="app" tabindex="0" data-url="./water-ambience/index.html" onclick="openApp(this)">
+        <h2>Water Ambience</h2>
+        <p>Enjoy water sounds while you are out.</p>
+      </a>
+    </main>
+    <script src="./js/script.js"></script>
+    <script src="./js/boot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+:root {
+  --primary-color: #333;
+  --secondary-color: #fff;
+  --toolbar-color: #444;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px;
+  text-align: center;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 50px;
+}
+.widget,
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.app {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.app:hover:not(:focus),
+.app:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.app:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+.app h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.app p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.app-frame {
+  position: fixed;
+  top: 46px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100% - 46px);
+  border: none;
+  background-color: #fff;
+  z-index: 1;
+  overflow: auto;
+}
+.title-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-bar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 24px;
+  cursor: pointer;
+}
+button,
+input {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover:not(:focus),
+input:hover:not(:focus) {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+button:focus,
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+  transform: scale(1.05);
+}
+#URLBAR {
+  width: 80%;
+}
+.url-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.frame-container-webview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.toolbar-webview {
+  background-color: var(--toolbar-color);
+  color: var(--secondary-color);
+  padding: 20px;
+  text-align: center;
+}
+.program-body-webview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+.program-frame-webview {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
