@@ -1,21 +1,15 @@
-MIT License
+The NON-RBE Software License
 
-Copyright (c) 2023 window-ops
+Version 1.0
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Preamble:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This license is a variation of the RBE License for use in any type of system, whether is monetary or not. By using, modifying, or distributing software licensed under this agreement, you agree to abide by the terms and conditions outlined herein.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+License Terms:
+
+1. Attribution: When using or distributing software under this license, you must provide appropriate attribution to acknowledge the base software used. At a minimum, this should include a link to the original source.
+
+2. Open Source: All software distributed under this license must be open source, allowing for modification and improvement by individuals for the benefit of the community.
+
+3. Same License: Any derivative works or modifications of the software must also be licensed under this agreement. However, you can redistribute this software under the RBE License.
