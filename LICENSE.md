@@ -4,7 +4,7 @@ Version 1.0
 
 Preamble:
 
-This license is a variation of the RBE License for use in any type of system, whether is monetary or not. You can freely use, modify, and distribute software licensed under these terms and conditions outlined herein.
+This license is a variation of the RBE License for use in any type of system, whether is monetary or not. You can freely use, modify, sell and distribute software licensed under these terms and conditions outlined herein.
 
 License Terms:
 
