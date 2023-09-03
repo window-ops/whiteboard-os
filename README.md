@@ -1,3 +1,3 @@
 # Whiteboard OS
 
-Whiteboard OS is a free and open-source web-based operating system designed specifically for teachers and educators.
+Whiteboard OS is a free, open-source and lightweight web-based operating system designed specifically for teachers and educators.
