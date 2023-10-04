@@ -1,6 +1,7 @@
+const iframe = document.getElementById('FRAME');
+
 function Navigate() {
   let url = document.getElementById('URLBAR').value.trim();
-  const iframe = document.getElementById('FRAME');
   iframe.addEventListener('load', function() {
     document.getElementById('URLBAR').value = iframe.src;
   });
@@ -11,3 +12,6 @@ function Navigate() {
 
   iframe.src = url;
 }
+iframe.addEventListener('load', () => {
+  document.getElementById('URLBAR').value = iframe.contentWindow.location.href;
+});
