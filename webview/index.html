@@ -18,7 +18,7 @@
     </div>
     <div class="program-body-webview">
       <div class="frame-container-webview">
-        <iframe class="program-frame-webview" src="" id="FRAME"></iframe>
+        <iframe class="program-frame-webview" src="" id="FRAME" onLoad="document.getElementById('URLBAR').value = iframe.src;"></iframe>
       </div>
     </div>
   </body>
