@@ -1,10 +1,9 @@
 const iframe = document.getElementById('FRAME');
-
+iframe.addEventListener('load', () => {
+  document.getElementById('URLBAR').value = iframe.contentWindow.location.href;
+});
 function Navigate() {
   let url = document.getElementById('URLBAR').value.trim();
-  iframe.addEventListener('load', function() {
-    document.getElementById('URLBAR').value = iframe.src;
-  });
   
   if (!url.startsWith('https://') && !url.startsWith('http://')) {
     url = `https://${url}`;
@@ -12,6 +11,3 @@ function Navigate() {
 
   iframe.src = url;
 }
-iframe.addEventListener('load', () => {
-  document.getElementById('URLBAR').value = iframe.contentWindow.location.href;
-});
