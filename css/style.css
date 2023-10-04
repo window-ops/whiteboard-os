@@ -42,7 +42,7 @@ main {
 }
 .app:hover:not(:focus),
 .app:focus {
-  transform: scale(1.05);
+  transform: scale(1.04);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 .app:focus {
@@ -130,17 +130,18 @@ input {
 }
 button:hover:not(:focus),
 input:hover:not(:focus) {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 button:focus,
 input:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
-  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
 }
 #URLBAR {
-  width: 80%;
+  width: 90%;
+}
+#SEARCH {
+  width: 90%;
 }
 .url-container {
   display: flex;
