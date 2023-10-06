@@ -47,7 +47,7 @@ main {
 }
 .app:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
 }
 .app h2 {
   font-size: 1.5rem;
