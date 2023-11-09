@@ -139,9 +139,7 @@ input:focus {
 }
 #URLBAR {
   width: 90%;
-}
-#SEARCH {
-  width: 90%;
+  margin-right: 5px;
 }
 .url-container {
   display: flex;
