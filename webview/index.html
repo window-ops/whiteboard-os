@@ -4,15 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Web View</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
     <script src="./js/functions.js"></script>
   </head>
   <body>
     <div class="toolbar-webview">
       <div class="url-container-webview">
         <div>
-          <input id="URLBAR" placeholder="Type the URL you want to present...">
-          <button onclick="Navigate()">Navigate</button>
+          <div class="app-input-container" id="URLBAR-CONTAINER">
+            <input class="app-input-text" id="URLBAR" placeholder="Type the URL you want to present...">
+            <button class="app-btn" onclick="Navigate()">Navigate</button>
+          </div>
         </div>
       </div>
     </div>
