@@ -1,0 +1,29 @@
+#URLBAR-CONTAINER {
+  width: 90%;
+}
+
+#URLBAR {
+  width: 100%;
+  margin-right: 5px;
+}
+
+.url-container {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-webview {
+  border-bottom: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-foreground-dark);
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.program-frame-webview {
+  position: absolute;
+  top: 50px;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  border: none;
+}
