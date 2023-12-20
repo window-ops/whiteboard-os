@@ -12,4 +12,5 @@ body {
 .lc-picker, .lc-options, .horz-toolbar {
   background-color: var(--color-foreground-dark) !important;
   color: var(--color-text-default) !important;
+  border: 0 !important;
 }
