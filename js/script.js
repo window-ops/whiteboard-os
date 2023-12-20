@@ -40,7 +40,7 @@ function openApp(app) {
   lightbox.appendChild(titleBar);
   const closeButton = document.createElement('div');
   closeButton.classList.add('close-button');
-  closeButton.innerHTML = '<i class="icons10-cross"></i>';
+  closeButton.innerHTML = '<i class="icons10-cross" aria-label="Close"></i>';
   titleBar.appendChild(closeButton);
   document.body.appendChild(lightbox);
   closeButton.addEventListener('click', () => {
