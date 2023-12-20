@@ -1,7 +1,7 @@
 const apps = document.querySelectorAll('.app');
 let focusedAppIndex = 0;
 
-// Select Apps
+// Select App
 
 function focusApp(index) {
   apps[index].focus();
@@ -29,7 +29,7 @@ function openApp(app) {
   const lightboxContent = document.createElement('div');
   lightboxContent.classList.add('lightbox-content');
   lightboxContent.innerHTML = `
-    <iframe class="app-frame" src="${appUrl}" frameborder="0" referrerpolicy="no-referrer" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+    <iframe class="app-frame" src="${appUrl}" frameborder="0"></iframe>
   `;
   lightbox.appendChild(lightboxContent);
   const titleBar = document.createElement('div');
@@ -40,7 +40,7 @@ function openApp(app) {
   lightbox.appendChild(titleBar);
   const closeButton = document.createElement('div');
   closeButton.classList.add('close-button');
-  closeButton.innerHTML = '&times;';
+  closeButton.innerHTML = '<i class="icons10-cross"></i>';
   titleBar.appendChild(closeButton);
   document.body.appendChild(lightbox);
   closeButton.addEventListener('click', () => {
