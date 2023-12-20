@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <link href="./css/literallycanvas.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link href="./css/windows-ui.min.css" rel="stylesheet">
+    <script src="./js/react-with-addons.js"></script>
+    <script src="./js/react-dom.js"></script>
+    <script src="./js/literallycanvas.js"></script>
+  </head>
+  <body>
+    <div class="my-drawing"></div>
+    <script>
+        LC.init(
+            document.getElementsByClassName('my-drawing')[0],
+            {imageURLPrefix: './img'}
+        );
+    </script>
+  </body>
+</html>
