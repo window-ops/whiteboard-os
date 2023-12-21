@@ -8,6 +8,7 @@ function Navigate() {
 
   iframe.src = url;
 }
+
 window.onload = function() {
   const iframe = document.getElementById('FRAME');
   iframe.addEventListener('load', () => {
