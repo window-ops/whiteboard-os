@@ -1,4 +1,3 @@
-
 const $ = _ => document.querySelector(_)
 
 const $c = _ => document.createElement(_)
