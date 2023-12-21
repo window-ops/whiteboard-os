@@ -37,7 +37,7 @@ canvas {
 	width: 580px;
 	height: 100%;
 	transition: width .8s;
-	background-color: #eee;
+	background-color: var(--color-foreground-dark);
 }
 @media only screen and (max-width: 1700px) {
 	#tools {
