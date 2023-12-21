@@ -9,7 +9,7 @@ body {
   width: 100vw;
 }
 
-.lc-picker, .lc-options, .horz-toolbar {
+.lc-picker, .lc-options, .horz-toolbar, .lc-font-settings {
   background-color: var(--color-foreground-dark) !important;
   color: var(--color-text-default) !important;
   border: 0 !important;
