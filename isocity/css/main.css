@@ -69,7 +69,7 @@ canvas {
 
 #tools > div.selected {
 	border-radius: 4px;
-	border-color: #666;
+	border-color: var(--color-foreground-dark)
 }
 
 @media only screen and (max-width: 966px) {
