@@ -1,3 +1,9 @@
+:root {
+  --PrimaryColor: #0078D7;
+  --PrimaryColorLight: #60CDFF;
+  --color-primary-adaptive: var(--dark, var(--PrimaryColorLight)) var(--light, var(--PrimaryColor));
+}
+
 * {
   box-sizing: border-box;
 }
