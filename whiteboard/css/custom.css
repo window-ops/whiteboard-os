@@ -18,3 +18,16 @@ body {
 .lc-drawing {
   background-color: var(--color-foreground-dark) !important;
 }
+
+select {
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid;
+  border-radius: 4px;
+  color: var(--color-text-default);
+  background-color: var(--color-button-default);
+  border-color: rgba(0,0,0,0.08);
+  border-bottom-color: var(--dark, rgba(0,0,0,0.08)) var(--light, rgba(0,0,0,0.2));
+  border-top-color: var(--dark, rgba(117,117,117,0.22)) var(--light, rgba(0,0,0,0.08));
+  margin-right: 4px;
+}
