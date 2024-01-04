@@ -1,4 +1,4 @@
-Taken from: https://github.com/literallycanvas/literallycanvas
+This whiteboard program is a modified version of Literally Canvas (https://github.com/literallycanvas/literallycanvas)
 
 License:
 
