@@ -1,7 +1,7 @@
 const apps = document.querySelectorAll('.app');
 let focusedAppIndex = 0;
 
-// Select App
+// Select Apps
 
 function focusApp(index) {
   apps[index].focus();
@@ -38,9 +38,9 @@ function openApp(app) {
     <h2>${app.querySelector('h2').textContent}</h2>
   `;
   lightbox.appendChild(titleBar);
-  const closeButton = document.createElement('div');
-  closeButton.classList.add('close-button');
-  closeButton.innerHTML = '<i class="icons10-cross" aria-label="Close"></i>';
+  const closeButton = document.createElement('button');
+  closeButton.classList.add('close-button', 'app-btn', 'app-btn-subtle');
+  closeButton.innerHTML = '<i class="icons10-cross" aria-label="Close">';
   titleBar.appendChild(closeButton);
   document.body.appendChild(lightbox);
   closeButton.addEventListener('click', () => {

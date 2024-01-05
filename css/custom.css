@@ -93,9 +93,7 @@ main {
 }
 
 .close-button {
-  background-color: transparent;
-  border: none;
   color: var(--color-text-default);
-  font-size: 24px;
-  cursor: pointer;
+  height: 28px !important;
+  width: 28px !important;
 }
