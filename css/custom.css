@@ -81,7 +81,7 @@ main {
   right: 0;
   background-color: var(--color-foreground-dark);
   color: var(--color-text-default);
-  padding: 10px;
+  padding: 9px 10px 9px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
