@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./leaflet/leaflet.css">
     <title>Map</title>
-    <style>
-      body{
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./leaflet/leaflet.css">
+    <link rel="stylesheet" href="./css/custom.css">
   </head>
-  <body>
-    <div id="map"></div>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row wos-docs" data-kind="map"></div>
+      <div class="tool-row is-end">
+        <button class="app-btn" type="button" id="MEASURE" aria-pressed="false">Measure distance</button>
+        <button class="app-btn" type="button" id="RESET">Clear measurement</button>
+        <span class="tool-note" id="READOUT"></span>
+      </div>
+    </div>
+    <div class="tool-stage is-fitted">
+      <div id="map"></div>
+    </div>
     <script src="./leaflet/leaflet.js"></script>
-    <script>
-      const map = L.map('map', {
-        center: [0, 0],
-        zoom: 3
-      });
-
-      // OpenStreetMap layer
-      const streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
-      streetLayer.addTo(map);
-
-      // Satellite layer
-      const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'});
-      satelliteLayer.addTo(map);
-
-      // Layer switcher control
-      const baseMaps = {
-        "Street Map": streetLayer,
-        "Satellite Map": satelliteLayer
-      };
-      
-      L.control.layers(baseMaps).addTo(map);
-    </script>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
   </body>
 </html>

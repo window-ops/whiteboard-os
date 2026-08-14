@@ -1,20 +1,75 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html lang="en" data-theme="light">
   <head>
-    <link href="./css/literallycanvas.css" rel="stylesheet">
-    <link href="./css/custom.css" rel="stylesheet">
-    <link href="../css/windows-ui.css" rel="stylesheet">
-    <script src="./js/react-with-addons.js"></script>
-    <script src="./js/react-dom.js"></script>
-    <script src="./js/literallycanvas.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Whiteboard</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
   </head>
-  <body>
-    <div class="my-drawing"></div>
-    <script>
-        LC.init(
-            document.getElementsByClassName('my-drawing')[0],
-            {imageURLPrefix: './img'}
-        );
-    </script>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row board-tools" role="group" aria-label="Drawing tools">
+        <button class="app-btn board-tool" type="button" data-tool="pen" aria-pressed="true" title="Pen" aria-label="Pen"><i class="icons10-pencil" aria-hidden="true"></i></button>
+        <button class="app-btn board-tool" type="button" data-tool="line" aria-pressed="false" title="Line" aria-label="Line"><i class="icons10-timeline" aria-hidden="true"></i></button>
+        <button class="app-btn board-tool" type="button" data-tool="arrow" aria-pressed="false" title="Arrow" aria-label="Arrow"><i class="icons10-arrow-right" aria-hidden="true"></i></button>
+        <button class="app-btn board-tool" type="button" data-tool="rectangle" aria-pressed="false" title="Rectangle" aria-label="Rectangle"><span class="board-glyph board-glyph-rectangle" aria-hidden="true"></span></button>
+        <button class="app-btn board-tool" type="button" data-tool="ellipse" aria-pressed="false" title="Ellipse" aria-label="Ellipse"><span class="board-glyph board-glyph-ellipse" aria-hidden="true"></span></button>
+        <button class="app-btn board-tool" type="button" data-tool="text" aria-pressed="false" title="Text" aria-label="Text"><i class="icons10-text-width" aria-hidden="true"></i></button>
+        <button class="app-btn board-tool" type="button" data-tool="eraser" aria-pressed="false" title="Eraser" aria-label="Eraser"><i class="icons10-eraser" aria-hidden="true"></i></button>
+        <button class="app-btn board-tool" type="button" data-tool="pan" aria-pressed="false" title="Pan" aria-label="Pan"><i class="icons10-resize-four-directions" aria-hidden="true"></i></button>
+      </div>
+      <div class="tool-row board-colours" id="COLOURS" role="group" aria-label="Colour"></div>
+      <div class="tool-field is-tight">
+        <span>Thickness</span>
+        <input id="WIDTH" type="range" min="1" max="24" step="1" value="3" aria-label="Stroke thickness">
+      </div>
+      <div class="tool-row">
+        <label class="board-check" for="FILLED">
+          <input class="app-checkbox" id="FILLED" type="checkbox">
+          <span>Fill shapes</span>
+        </label>
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="UNDO" title="Undo" aria-label="Undo"><i class="icons10-undo" aria-hidden="true"></i></button>
+        <button class="app-btn" type="button" id="REDO" title="Redo" aria-label="Redo"><i class="icons10-undo board-flip" aria-hidden="true"></i></button>
+        <button class="app-btn" type="button" id="ZOOM-OUT" title="Zoom out" aria-label="Zoom out"><i class="icons10-minus" aria-hidden="true"></i></button>
+        <button class="app-btn" type="button" id="ZOOM-IN" title="Zoom in" aria-label="Zoom in"><i class="icons10-plus" aria-hidden="true"></i></button>
+        <button class="app-btn" type="button" id="RESET-VIEW">Fit</button>
+        <button class="app-btn" type="button" id="CLEAR" title="Clear the board" aria-label="Clear the board"><i class="icons10-trash" aria-hidden="true"></i></button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="whiteboard"></div>
+      <div class="tool-row is-end">
+        <div class="app-select-menu board-export-menu">
+          <select id="FORMAT" aria-label="Export format">
+            <option value="png">PNG image</option>
+            <option value="svg">SVG drawing</option>
+            <option value="json">JSON snapshot</option>
+          </select>
+        </div>
+        <button class="app-btn" type="button" id="SAVE-FILE">Keep in Files</button>
+        <button class="app-btn" type="button" id="DOWNLOAD">Download a copy</button>
+      </div>
+      <div class="tool-row" id="STATUS-ROW" hidden>
+        <span class="tool-note" id="STATUS"></span>
+      </div>
+    </div>
+    <div class="tool-stage is-fitted whiteboard-stage">
+      <canvas class="board-canvas" id="BOARD"></canvas>
+      <input class="app-input-text board-text-entry" id="TEXT-ENTRY" type="text" hidden aria-label="Text to place on the board">
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/download.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="./js/engine.js"></script>
+    <script src="./js/board.js"></script>
+    <script src="../js/tool-docs.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,45 @@
+.constants-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.constants-table th,
+.constants-table td {
+  padding: 6px 12px 6px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--color-ui-border-default);
+}
+
+.constants-table thead th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.constants-table td:nth-child(3),
+.constants-table td:nth-child(5) {
+  font-variant-numeric: tabular-nums;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.constants-table .is-exact {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.constants-group th {
+  padding-top: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  border-bottom: none;
+}
+
+.constants-source {
+  margin-top: 14px;
+  max-width: 70ch;
+}

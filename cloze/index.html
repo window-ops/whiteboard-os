@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cloze Builder</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row">
+        <div class="tool-switch" role="group" aria-label="Choose the stage">
+          <button class="app-btn" type="button" id="STEP-TEXT" aria-pressed="true">Paste text</button>
+          <button class="app-btn" type="button" id="STEP-MARK" aria-pressed="false">Choose blanks</button>
+          <button class="app-btn" type="button" id="STEP-SHEET" aria-pressed="false">Sheet</button>
+        </div>
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="CLEAR">Clear blanks</button>
+        <button class="app-btn" type="button" id="ANSWERS" aria-pressed="false">Show answers</button>
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn" type="button" id="SAVE">Save to files</button>
+        <button class="app-btn app-btn-primary" type="button" id="PRINT">Print the sheet</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="cloze"></div>
+    </div>
+    <div class="tool-stage" id="STAGE" data-step="text">
+      <label class="cloze-entry" for="SOURCE">
+        <span class="tool-note">Paste the passage, then move to choosing blanks.</span>
+        <textarea class="app-textarea" id="SOURCE" spellcheck="false"></textarea>
+      </label>
+      <div class="cloze-passage" id="MARK" aria-label="Click a word to blank it"></div>
+      <div class="cloze-sheet" id="SHEET"></div>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,675 @@
+/*
+ * Shell styles. Loaded after the existing stylesheets and additive only:
+ * nothing here redefines a rule that another file relies on, and the
+ * launcher tiles use the .app and .app-btn classes from windows-ui.css.
+ */
+
+/* Header */
+
+.wos-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wos-header h1 {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.wos-settings-button {
+  flex: none;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+/* Launcher */
+
+.wos-launcher[data-mode="single"] {
+  display: block;
+  padding: 20px;
+}
+
+.wos-launcher[data-mode="paged"] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+/*
+ * One category per page. Scroll snapping does the swiping, so touch, trackpad
+ * and the arrow buttons all move the same way.
+ */
+
+.wos-pages {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.wos-pages::-webkit-scrollbar {
+  display: none;
+}
+
+/* The slide is a setting. Where it is off, a page change is a jump, and the
+   stylesheet says so as well as the script that calls for the scroll. */
+
+.wos-launcher[data-swipe="on"] .wos-pages {
+  scroll-behavior: smooth;
+}
+
+.wos-launcher[data-swipe="off"] .wos-pages {
+  scroll-behavior: auto;
+}
+
+.wos-page {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: 20px;
+}
+
+.wos-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 20px 20px 20px;
+}
+
+.wos-pager-step {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.wos-pager-step[disabled] {
+  opacity: 0.35;
+}
+
+.wos-pager-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wos-pager-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-input-border-strong);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.wos-pager-dot[aria-selected="true"] {
+  background-color: var(--color-input-border-strong);
+}
+
+.wos-category {
+  margin: 0 0 30px 0;
+}
+
+.wos-category:last-child {
+  margin-bottom: 0;
+}
+
+.wos-category-name {
+  margin: 0 0 12px 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.wos-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.app h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Dock */
+
+.wos-dock {
+  position: static;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-foreground-dark);
+  margin-top: auto;
+}
+
+.wos-dock[data-placement="sticky"] {
+  position: sticky;
+  bottom: 0;
+}
+
+.wos-dock-item {
+  height: 36px !important;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 620px) {
+  .wos-dock {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .wos-dock-item {
+    padding: 0 10px;
+    font-size: 13px;
+  }
+}
+
+/* Workspace */
+
+.wos-workspace {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-foreground-dark);
+}
+
+.wos-workspace[data-layout="horizontal"] {
+  flex-direction: column;
+}
+
+.wos-workspace.is-dragging .wos-pane-frame {
+  pointer-events: none;
+}
+
+.wos-pane {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background-color: var(--color-background-default);
+}
+
+.wos-pane-bar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 10px;
+  color: var(--color-text-default);
+  background-color: var(--color-foreground-dark);
+}
+
+.wos-pane-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.wos-pane-button {
+  flex: none;
+  height: 28px !important;
+  width: 28px !important;
+  color: var(--color-text-default);
+}
+
+.wos-pane-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: none;
+  background-color: #fff;
+}
+
+.wos-pane-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  min-height: 0;
+}
+
+/* Help panel, docked to the right of the frame it describes */
+
+.wos-help {
+  flex: none;
+  width: 340px;
+  max-width: 50%;
+  padding: 4px 18px 16px 18px;
+  overflow-y: auto;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-text-default);
+  background-color: var(--color-background-default);
+  border-left: 1px solid var(--color-ui-border-default);
+}
+
+.wos-help[hidden] {
+  display: none;
+}
+
+.wos-help h4 {
+  margin: 14px 0 4px 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.wos-help h4:first-child {
+  margin-top: 8px;
+}
+
+.wos-help p {
+  margin: 0 0 8px 0;
+  max-width: 70ch;
+}
+
+/* Divider */
+
+.wos-divider {
+  flex: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-foreground-dark);
+}
+
+.wos-workspace[data-layout="vertical"] .wos-divider {
+  width: 8px;
+  cursor: col-resize;
+}
+
+.wos-workspace[data-layout="horizontal"] .wos-divider {
+  height: 8px;
+  cursor: row-resize;
+}
+
+.wos-divider::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color-input-border-strong);
+  opacity: 0.28;
+}
+
+.wos-workspace[data-layout="vertical"] .wos-divider::before {
+  width: 2px;
+  height: 42px;
+  border-radius: 2px;
+}
+
+.wos-workspace[data-layout="horizontal"] .wos-divider::before {
+  width: 42px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+/* The handle stays quiet until the divider is pointed at or focused. */
+
+.wos-divider-handle {
+  position: absolute;
+  z-index: 1;
+  height: 20px !important;
+  width: 20px !important;
+  padding: 0;
+  border: none;
+  font-size: 11px;
+  opacity: 0;
+  color: var(--color-text-default);
+  background-color: transparent;
+  transition: opacity 0.15s ease;
+}
+
+.wos-divider:hover .wos-divider-handle,
+.wos-divider:focus-within .wos-divider-handle,
+.wos-divider-handle:focus-visible {
+  opacity: 0.55;
+}
+
+.wos-divider-handle:hover {
+  opacity: 1 !important;
+  background-color: var(--color-ui-hover-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wos-divider-handle {
+    transition: none;
+  }
+}
+
+/* Picker */
+
+.wos-picker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  overflow-y: auto;
+  background-color: var(--color-background-default);
+}
+
+.wos-picker-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-foreground-dark);
+}
+
+.wos-picker-title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 20px;
+}
+
+.wos-picker-body {
+  padding: 20px;
+}
+
+/*
+ * Controls that draw themselves from the accent colour need it defined. The
+ * palette is loaded on every page, and these fallbacks keep a control legible
+ * even if it is not.
+ */
+
+.wos-choice input,
+.wos-settings-string,
+.wos-usage-fill {
+  accent-color: var(--color-primary-adaptive, #0078d7);
+}
+
+.app-radio-button:checked {
+  border-color: var(--color-primary-adaptive, #0078d7);
+}
+
+/*
+ * The centre of a chosen radio takes the page colour, which under a dark theme
+ * is nearly black and reads as a hole rather than a mark. A light centre keeps
+ * the ring and the dot distinct.
+ */
+
+[data-theme="dark"] .app-radio-button:checked {
+  background: #f2f2f2;
+}
+
+/* Settings */
+
+.wos-settings-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 22px 20px 28px 20px;
+}
+
+.wos-settings-group {
+  flex: 1 1 260px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 16px 14px 16px;
+  border: 1px solid var(--color-ui-border-default);
+  border-radius: 6px;
+}
+
+.wos-settings-group legend {
+  padding: 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+/* One choice per row, control first, wording beside it. */
+
+.wos-choice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wos-choice input {
+  flex: none;
+}
+
+/* Anything inside a settings group reads as a row of its own, so a group
+   never collapses into running text. */
+
+.wos-settings-group > * {
+  max-width: 100%;
+}
+
+.wos-settings-group > label {
+  display: flex;
+}
+
+.wos-settings-note {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+/* Storage */
+
+.wos-storage {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wos-storage-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px 26px;
+  align-items: start;
+}
+
+.wos-storage-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.wos-storage-column > .wos-settings-group {
+  flex: none;
+}
+
+.wos-storage-heading {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+.wos-storage-line {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.wos-usage {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wos-usage[hidden] {
+  display: none;
+}
+
+.wos-usage-bar {
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--color-ui-border-default);
+}
+
+.wos-usage-fill {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--color-primary-adaptive, #0078d7);
+  transition: width 0.2s ease;
+}
+
+.wos-usage-fill.is-full {
+  background-color: #c92a2a;
+}
+
+.wos-usage-figures {
+  margin: 0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.wos-file-holder {
+  min-height: 96px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 6px 10px;
+  border: 1px solid var(--color-ui-border-default);
+  border-radius: 6px;
+  background-color: var(--color-card-bg-default);
+}
+
+.wos-file-empty {
+  margin: 0;
+  padding: 14px 4px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.wos-file-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wos-file-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--color-ui-border-default);
+}
+
+.wos-file-list li:last-child {
+  border-bottom: none;
+}
+
+.wos-file-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: monospace;
+  font-size: 12.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wos-storage-transfer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-ui-border-default);
+}
+
+.wos-storage-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.wos-storage-field > span {
+  opacity: 0.75;
+}
+
+.wos-settings-string {
+  width: 100%;
+  font-family: monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.wos-storage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wos-trim {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+}
+
+.wos-trim .wos-storage-actions {
+  margin-top: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wos-usage-fill {
+    transition: none;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .wos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wos-help {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wos-pane-body {
+    flex-direction: column;
+  }
+
+  .wos-divider-handle {
+    opacity: 0.55;
+  }
+}

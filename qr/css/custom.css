@@ -1,0 +1,18 @@
+.qr-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.qr-holder:empty {
+  display: none;
+}
+
+.qr-holder img,
+.qr-holder canvas {
+  display: block;
+  image-rendering: pixelated;
+}

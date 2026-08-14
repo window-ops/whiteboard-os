@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide">
+        <span>Text or address</span>
+        <input class="app-input-text" id="TEXT" type="text" autocomplete="off" spellcheck="false" aria-label="Text or address to encode">
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="USE-SESSION">Use this session's address</button>
+        <button class="app-btn" type="button" id="DOWNLOAD">Download a copy</button>
+      </div>
+      <div class="tool-field is-tight">
+        <span>Size</span>
+        <input id="SIZE" type="range" min="160" max="620" step="20" value="360" aria-label="Code size">
+      </div>
+    </div>
+    <div class="tool-stage is-centred">
+      <div class="qr-holder" id="HOLDER" aria-live="polite"></div>
+      <p class="tool-note" id="STATUS" role="status"></p>
+    </div>
+    <script src="./js/qrcode.js"></script>
+    <script src="../js/download.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

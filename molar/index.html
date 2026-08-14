@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molar Mass</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide">
+        <span>Formula</span>
+        <input class="app-input-text molar-formula" id="FORMULA" type="text" autocomplete="off" spellcheck="false" value="Ca(OH)2" aria-label="Chemical formula">
+      </div>
+      <div class="tool-field is-tight">
+        <span>Mass in grams</span>
+        <input class="app-input-text" id="MASS" type="text" inputmode="decimal" value="10" aria-label="Mass in grams">
+      </div>
+    </div>
+    <div class="tool-stage is-centred">
+      <section class="molar-card" aria-live="polite">
+        <p class="molar-result tool-readout" id="RESULT"></p>
+        <p class="tool-note" id="AMOUNT"></p>
+      </section>
+      <section class="molar-breakdown" aria-label="Composition">
+        <table class="molar-table">
+          <thead>
+            <tr>
+              <th scope="col">Element</th>
+              <th scope="col">Atoms</th>
+              <th scope="col">Atomic mass</th>
+              <th scope="col">Contribution</th>
+              <th scope="col">Share</th>
+            </tr>
+          </thead>
+          <tbody id="TABLE-BODY"></tbody>
+        </table>
+        <p class="tool-note" id="STATUS"></p>
+      </section>
+    </div>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../periodic/js/elements.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,99 +1,100 @@
-// Audio 1
+'use strict';
 
-const audio1 = document.getElementById('audio1');
-const playPauseButton1 = document.getElementById('play-pause-button1');
-const volumeSlider1 = document.getElementById('volume-slider1');
+(() => {
+  const TRACKS = [1, 2, 3, 4, 5];
 
-playPauseButton1.addEventListener('click', () => {
-  if (audio1.paused) {
-    audio1.play();
-    playPauseButton1.textContent = 'Pause';
-  } else {
-    audio1.pause();
-    playPauseButton1.textContent = 'Play';
-  }
-});
+  const stopAllButton = document.getElementById('STOP-ALL');
+  const controls = [];
 
-volumeSlider1.addEventListener('input', () => {
-  audio1.volume = volumeSlider1.value;
-});
+  const save = () => {
+    WOSState.write({
+      mix: controls.map((entry) => `${entry.audio.paused ? 0 : 1}:${entry.slider.value}`).join(',')
+    });
+  };
 
-// Audio 2
+  TRACKS.forEach((index) => {
+    const audio = document.getElementById(`audio${index}`);
+    const button = document.getElementById(`play-pause-button${index}`);
+    const slider = document.getElementById(`volume-slider${index}`);
 
-const audio2 = document.getElementById('audio2');
-const playPauseButton2 = document.getElementById('play-pause-button2');
-const volumeSlider2 = document.getElementById('volume-slider2');
+    if (audio === null || button === null || slider === null) {
+      return;
+    }
 
-playPauseButton2.addEventListener('click', () => {
-  if (audio2.paused) {
-    audio2.play();
-    playPauseButton2.textContent = 'Pause';
-  } else {
-    audio2.pause();
-    playPauseButton2.textContent = 'Play';
-  }
-});
+    const card = button.closest('.sound');
+    const name = card === null ? `track ${index}` : card.querySelector('.sound-name').textContent;
 
-volumeSlider2.addEventListener('input', () => {
-  audio2.volume = volumeSlider2.value;
-});
+    controls.push({ audio, button, slider });
+    audio.volume = Number(slider.value);
+    button.setAttribute('aria-label', `Play ${name}`);
 
-// Audio 3
+    button.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        return;
+      }
 
-const audio3 = document.getElementById('audio3');
-const playPauseButton3 = document.getElementById('play-pause-button3');
-const volumeSlider3 = document.getElementById('volume-slider3');
+      audio.pause();
+    });
 
-playPauseButton3.addEventListener('click', () => {
-  if (audio3.paused) {
-    audio3.play();
-    playPauseButton3.textContent = 'Pause';
-  } else {
-    audio3.pause();
-    playPauseButton3.textContent = 'Play';
-  }
-});
+    /* Labels follow the element's own events, so an interrupted play promise
+       cannot leave the button reading the wrong state. */
+    audio.addEventListener('play', () => {
+      button.textContent = 'Pause';
+      button.setAttribute('aria-pressed', 'true');
+      button.setAttribute('aria-label', `Pause ${name}`);
+      save();
+    });
 
-volumeSlider3.addEventListener('input', () => {
-  audio3.volume = volumeSlider3.value;
-});
+    audio.addEventListener('pause', () => {
+      button.textContent = 'Play';
+      button.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-label', `Play ${name}`);
+      save();
+    });
 
-// Audio 4
+    slider.addEventListener('input', () => {
+      audio.volume = Number(slider.value);
+    });
 
-const audio4 = document.getElementById('audio4');
-const playPauseButton4 = document.getElementById('play-pause-button4');
-const volumeSlider4 = document.getElementById('volume-slider4');
+    slider.addEventListener('change', save);
+  });
 
-playPauseButton4.addEventListener('click', () => {
-  if (audio4.paused) {
-    audio4.play();
-    playPauseButton4.textContent = 'Pause';
-  } else {
-    audio4.pause();
-    playPauseButton4.textContent = 'Play';
-  }
-});
+  stopAllButton.addEventListener('click', () => {
+    controls.forEach((entry) => {
+      entry.audio.pause();
+    });
+  });
 
-volumeSlider4.addEventListener('input', () => {
-  audio4.volume = volumeSlider4.value;
-});
+  const restore = () => {
+    const values = WOSState.read();
 
-// Audio 5
+    if (typeof values.mix !== 'string' || values.mix === '') {
+      return;
+    }
 
-const audio5 = document.getElementById('audio5');
-const playPauseButton5 = document.getElementById('play-pause-button5');
-const volumeSlider5 = document.getElementById('volume-slider5');
+    values.mix.split(',').forEach((part, position) => {
+      const entry = controls[position];
+      const pieces = part.split(':');
 
-playPauseButton5.addEventListener('click', () => {
-  if (audio5.paused) {
-    audio5.play();
-    playPauseButton5.textContent = 'Pause';
-  } else {
-    audio5.pause();
-    playPauseButton5.textContent = 'Play';
-  }
-});
+      if (entry === undefined || pieces.length !== 2) {
+        return;
+      }
 
-volumeSlider5.addEventListener('input', () => {
-  audio5.volume = volumeSlider5.value;
-});
+      entry.slider.value = pieces[1];
+      entry.audio.volume = Number(pieces[1]);
+
+      if (pieces[0] === '1') {
+        const started = entry.audio.play();
+
+        if (started && typeof started.catch === 'function') {
+          started.catch(() => {
+            /* A browser that blocks autoplay leaves the track paused. */
+          });
+        }
+      }
+    });
+  };
+
+  restore();
+})();

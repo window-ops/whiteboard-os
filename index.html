@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Whiteboard OS</title>
+    <link rel="stylesheet" href="./css/root.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="stylesheet" href="./css/no-scrollbar.css">
     <link rel="stylesheet" href="./css/windows-ui.css">
     <link rel="stylesheet" href="./css/winui-icons.css">
+    <link rel="stylesheet" href="./css/shell.css">
   </head>
   <body>
-    <header>
+    <header class="wos-header">
       <h1>Welcome to Whiteboard OS</h1>
+      <button class="app-btn app-btn-subtle wos-settings-button" type="button" id="SETTINGS" aria-label="Settings" title="Settings" aria-expanded="false">
+        <i class="icons10-settings" aria-hidden="true"></i>
+      </button>
     </header>
-    <main>
-      <a class="app app-btn" tabindex="0" data-url="./whiteboard/index.html" onclick="openApp(this)">
-        <h2>Whiteboard</h2>
-        <p>A canvas-based tool that allows you to present ideas, concepts, and information with ease.</p>
-      </a>
-      <a class="app app-btn" tabindex="0" data-url="./webview/index.html" onclick="openApp(this)">
-        <h2>Web View</h2>
-        <p>Web View is a tool where you can easily bring up websites, online resources, and other online content that can enhance your lesson plans, presentations, or lectures.</p>
-      </a>
-      <a class="app app-btn" tabindex="0" data-url="./map/index.html" onclick="openApp(this)">
-        <h2>Map</h2>
-        <p>The world's map. Show locations and maps to your students.</p>
-      </a>
-      <a class="app app-btn" tabindex="0" data-url="./isocity/index.html" onclick="openApp(this)">
-        <h2>IsoCity</h2>
-        <p>Build a temporary isometric city.</p>
-      </a>
-      <a class="app app-btn" tabindex="0" data-url="./water-ambience/index.html" onclick="openApp(this)">
-        <h2>Water Ambience</h2>
-        <p>Enjoy water sounds while you are out.</p>
-      </a>
-    </main>
+    <main class="wos-launcher" id="LAUNCHER" data-mode="paged"></main>
+    <script src="./js/wos-fs.js"></script>
+    <script src="./js/formats.js"></script>
+    <script src="./js/download.js"></script>
+    <script src="./js/click.js"></script>
+    <script src="./js/apps.js"></script>
+    <script src="./js/help.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

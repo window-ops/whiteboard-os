@@ -1,0 +1,358 @@
+/*
+ * Shared chrome for the tool pages. Additive: it assumes windows-ui.css has
+ * already been loaded and adds only layout.
+ */
+
+body.tool {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: var(--color-text-default);
+  background-color: var(--color-background-default);
+}
+
+/*
+ * The bar spans the full width and its fields share the space, so a number
+ * input keeps its stepper arrows clear of the value.
+ */
+
+.tool-bar {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 16px;
+  width: 100%;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-foreground-dark);
+}
+
+.tool-field {
+  flex: 1 1 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.tool-field > span {
+  opacity: 0.75;
+}
+
+.tool-field input[type="text"],
+.tool-field input[type="number"],
+.tool-field input[type="range"],
+.tool-field textarea,
+.tool-field .app-select-menu,
+.tool-field .app-select-menu select {
+  width: 100%;
+}
+
+.tool-field.is-tight {
+  flex: 1 1 170px;
+}
+
+.tool-field.is-wide {
+  flex: 3 1 340px;
+}
+
+/* Inputs fill their field, so a bar row keeps one height and a number
+   stepper never sits on top of its own value. */
+
+.tool-field input[type="text"],
+.tool-field input[type="number"],
+.tool-field input[type="search"],
+.tool-field select {
+  height: 33px;
+}
+
+.tool-field input[type="range"] {
+  height: 33px;
+  margin: 0;
+}
+
+.tool-bar .tool-row {
+  align-self: flex-end;
+  min-height: 33px;
+}
+
+.tool-row {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool-row.is-end {
+  margin-left: auto;
+}
+
+/*
+ * A row that holds nothing, or that has been put away, takes no line of the
+ * bar. Without this the status row and an unfilled documents row each cost a
+ * full line, which on a wide screen is a bar of empty rows.
+ */
+
+.tool-row:empty,
+.tool-row[hidden] {
+  display: none;
+}
+
+.tool-stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+}
+
+.tool-stage.is-centred {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.tool-stage.is-fitted {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-note {
+  font-size: 13px;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.tool-readout {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* A segmented switch for tools that hold two views. */
+
+.tool-switch {
+  display: inline-flex;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--color-input-border-default);
+}
+
+.tool-switch button {
+  border: none;
+  border-radius: 0;
+  height: 33px;
+  padding: 6px 14px;
+  background-color: var(--color-button-default);
+}
+
+.tool-switch button + button {
+  border-left: 1px solid var(--color-input-border-default);
+}
+
+.tool-switch button[aria-pressed="true"] {
+  background-color: var(--color-ui-active-default);
+  font-weight: 700;
+}
+
+/* Form layout for tools whose controls read better stacked. */
+
+.tool-form-layout {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 0;
+  padding: 16px;
+  overflow: auto;
+}
+
+.tool-form {
+  flex: 0 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+}
+
+.tool-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.tool-form label > span {
+  opacity: 0.75;
+}
+
+.tool-form input[type="text"],
+.tool-form input[type="number"],
+.tool-form textarea,
+.tool-form .app-select-menu,
+.tool-form .app-select-menu select {
+  width: 100%;
+}
+
+.tool-form .check-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool-form .check-row > span {
+  opacity: 1;
+}
+
+.tool-output {
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+.tool-field.is-wide-select {
+  flex: 1 1 250px;
+  min-width: 210px;
+}
+
+/* A chosen radio keeps a light centre under a dark theme, where the page
+   colour would otherwise leave it looking like a hole. */
+
+[data-theme="dark"] .app-radio-button:checked {
+  background: #f2f2f2;
+}
+
+.app-radio-button:checked {
+  border-color: var(--color-primary-adaptive, #0078d7);
+}
+
+/* Documents bar */
+
+.wos-docs {
+  position: relative;
+  gap: 8px;
+}
+
+.wos-docs-note {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.wos-docs-panel {
+  position: fixed;
+  z-index: 500;
+  width: 340px;
+  max-width: calc(100vw - 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-background-default);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.22);
+}
+
+.wos-docs-heading {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.wos-docs-list {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.wos-docs-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 7px 8px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wos-docs-item:hover {
+  background-color: var(--color-ui-hover-strong);
+}
+
+.wos-docs-item.is-current {
+  background-color: var(--color-ui-active-default);
+}
+
+.wos-docs-item-name {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.wos-docs-item-meta {
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.wos-docs-empty,
+.wos-docs-suffix,
+.wos-docs-quota {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.wos-docs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.wos-docs-field > span {
+  opacity: 0.75;
+}
+
+.wos-docs-field input {
+  width: 100%;
+}
+
+.wos-docs-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Vertically centred stages for tools that leave room to spare */
+
+.tool-stage.is-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tool-stage.is-stacked > *:first-child {
+  margin-top: 0;
+}
+
+.tool-stage.is-stacked > *:last-child {
+  margin-bottom: 0;
+}

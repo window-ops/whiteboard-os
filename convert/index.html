@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide-select">
+        <span id="FAMILY-LABEL">Quantity</span>
+        <div class="app-select-menu">
+          <select id="FAMILY" aria-labelledby="FAMILY-LABEL"></select>
+        </div>
+      </div>
+      <div class="tool-field is-tight">
+        <span>Value</span>
+        <input class="app-input-text" id="VALUE" type="text" inputmode="decimal" value="1" aria-label="Value to convert">
+      </div>
+      <div class="tool-field">
+        <span id="FROM-LABEL">From</span>
+        <div class="app-select-menu">
+          <select id="FROM" aria-labelledby="FROM-LABEL"></select>
+        </div>
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="SWAP" aria-label="Swap the two units" title="Swap the two units">
+          <i class="icons10-resize-horizontal" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="tool-field">
+        <span id="TO-LABEL">To</span>
+        <div class="app-select-menu">
+          <select id="TO" aria-labelledby="TO-LABEL"></select>
+        </div>
+      </div>
+    </div>
+    <div class="tool-stage">
+      <p class="convert-result tool-readout" id="RESULT" aria-live="polite"></p>
+      <p class="tool-note" id="WORKING"></p>
+      <table class="app-table-view convert-table" id="TABLE">
+        <caption class="tool-note">The same value in every unit of this quantity</caption>
+        <thead>
+          <tr>
+            <th scope="col">Unit</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody id="TABLE-BODY"></tbody>
+      </table>
+    </div>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="./js/units.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

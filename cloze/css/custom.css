@@ -1,0 +1,78 @@
+#STAGE[data-step="text"] .cloze-passage,
+#STAGE[data-step="text"] .cloze-sheet,
+#STAGE[data-step="mark"] .cloze-entry,
+#STAGE[data-step="mark"] .cloze-sheet,
+#STAGE[data-step="sheet"] .cloze-entry,
+#STAGE[data-step="sheet"] .cloze-passage {
+  display: none;
+}
+
+.cloze-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+}
+
+.cloze-entry textarea {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 260px;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cloze-passage,
+.cloze-sheet {
+  max-width: 74ch;
+  font-size: 17px;
+  line-height: 2.1;
+}
+
+.cloze-word {
+  padding: 1px 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cloze-word:hover {
+  background-color: var(--color-ui-hover-strong);
+}
+
+.cloze-word:focus-visible {
+  outline: 2px solid var(--color-text-default);
+}
+
+.cloze-word.is-blank {
+  background-color: var(--color-ui-active-default);
+  text-decoration: underline;
+}
+
+.cloze-blank {
+  display: inline-block;
+  min-width: 7em;
+  border-bottom: 1px solid var(--color-text-default);
+  text-align: center;
+}
+
+.cloze-blank .cloze-answer {
+  opacity: 0.55;
+  font-style: italic;
+}
+
+.cloze-number {
+  font-size: 0.7em;
+  vertical-align: super;
+  opacity: 0.7;
+}
+
+@media print {
+  .tool-bar {
+    display: none;
+  }
+
+  .cloze-sheet {
+    font-size: 13pt;
+  }
+}

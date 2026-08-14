@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dice and Spinner</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row">
+        <div class="tool-switch" role="group" aria-label="Choose dice or spinner">
+          <button class="app-btn" type="button" id="MODE-DICE" aria-pressed="true">Dice</button>
+          <button class="app-btn" type="button" id="MODE-SPIN" aria-pressed="false">Spinner</button>
+        </div>
+      </div>
+      <div class="tool-field is-tight dice-only">
+        <span id="SIDES-LABEL">Die</span>
+        <div class="app-select-menu">
+          <select id="SIDES" aria-labelledby="SIDES-LABEL">
+            <option value="4">d4</option>
+            <option value="6" selected>d6</option>
+            <option value="8">d8</option>
+            <option value="10">d10</option>
+            <option value="12">d12</option>
+            <option value="20">d20</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-field is-tight dice-only">
+        <span>How many</span>
+        <input class="app-input-text" id="COUNT" type="number" min="1" max="8" step="1" value="2" aria-label="How many dice">
+      </div>
+      <div class="tool-field is-wide spin-only">
+        <span>Labels, one per line</span>
+        <textarea class="app-textarea" id="LABELS" rows="2" aria-label="Spinner labels, one per line"></textarea>
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn app-btn-primary" type="button" id="ACTION">Roll</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="dice"></div>
+    </div>
+    <div class="tool-stage is-stacked">
+      <section class="dice-view dice-only" aria-label="Dice">
+        <div class="dice-faces" id="FACES" aria-live="polite"></div>
+        <p class="dice-total tool-readout" id="TOTAL"></p>
+      </section>
+      <section class="dice-view spin-only" aria-label="Spinner">
+        <div class="spinner-wrap">
+          <svg class="spinner" id="WHEEL" viewBox="0 0 200 200" role="img" aria-label="Spinner wheel"></svg>
+          <div class="spinner-needle" aria-hidden="true"></div>
+        </div>
+        <p class="spinner-result tool-readout" id="RESULT" aria-live="polite"></p>
+      </section>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

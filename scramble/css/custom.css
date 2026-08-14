@@ -1,0 +1,36 @@
+.scramble-input {
+  flex: 0 1 320px;
+}
+
+.scramble-input textarea {
+  resize: vertical;
+}
+
+.scramble-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scramble-item {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+}
+
+.scramble-puzzle {
+  font-size: clamp(17px, 2.4vw, 23px);
+  letter-spacing: 0.04em;
+  word-spacing: 0.25em;
+}
+
+.scramble-answer {
+  margin: 6px 0 0 0;
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.scramble-answer[hidden] {
+  display: none;
+}

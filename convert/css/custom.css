@@ -1,0 +1,69 @@
+.convert-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.convert-swap {
+  align-self: flex-end;
+  padding-bottom: 1px;
+}
+
+.convert-card {
+  flex: 2 1 320px;
+  min-width: 0;
+  padding: 18px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+}
+
+.convert-result {
+  margin: 0 0 8px 0;
+  font-size: clamp(20px, 3.2vw, 30px);
+  line-height: 1.25;
+}
+
+.convert-all {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.convert-subhead {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.convert-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.convert-table th,
+.convert-table td {
+  padding: 5px 10px 5px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--color-ui-border-default);
+}
+
+.convert-table thead th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.convert-table td {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.convert-table tbody th {
+  font-weight: 400;
+  opacity: 0.85;
+}

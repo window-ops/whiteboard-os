@@ -1,0 +1,34 @@
+.tone-readout {
+  margin: 0;
+  font-size: clamp(30px, 7vw, 68px);
+  line-height: 1;
+}
+
+.tone-keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 720px;
+}
+
+.tone-key {
+  width: 62px;
+  height: 78px;
+  padding: 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--color-input-border-strong);
+  background-color: #ffffff;
+  color: #111111;
+  cursor: pointer;
+}
+
+.tone-key.is-sharp {
+  background-color: #2b2b2b;
+  color: #f4f4f4;
+}
+
+.tone-key.is-sounding {
+  outline: 3px solid var(--color-text-default);
+}

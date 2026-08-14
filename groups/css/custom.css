@@ -1,0 +1,30 @@
+.group-board {
+  display: grid;
+  grid-gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  margin-top: 12px;
+}
+
+.group-card {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+}
+
+.group-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.group-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.group-card li {
+  margin-bottom: 3px;
+}

@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IsoCity</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/main.css">
   </head>
-  <body>
-    <section id="main">
-      <div id="tools"></div>
-      <div id="area">
-        <canvas id="bg"></canvas>
-        <canvas id="fg"></canvas>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row wos-docs" data-kind="isocity"></div>
+      <div class="tool-row is-end">
+        <button class="app-btn" type="button" id="CLEAR">Clear the grid</button>
       </div>
-    </section>
+    </div>
+    <div class="tool-stage is-fitted">
+      <section id="main">
+        <div id="tools" role="group" aria-label="Tiles"></div>
+        <div id="area">
+          <canvas id="bg"></canvas>
+          <canvas id="fg"></canvas>
+        </div>
+      </section>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
     <script src="./js/main.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
   </body>
 </html>

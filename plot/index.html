@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Function Plotter</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field plot-grow">
+        <span class="plot-swatch plot-swatch-1">f(x) =</span>
+        <input class="app-input-text" id="F1" type="text" autocomplete="off" spellcheck="false" value="a*sin(b*x)" aria-label="First function of x">
+      </div>
+      <div class="tool-field plot-grow">
+        <span class="plot-swatch plot-swatch-2">g(x) =</span>
+        <input class="app-input-text" id="F2" type="text" autocomplete="off" spellcheck="false" aria-label="Second function of x">
+      </div>
+      <div class="tool-field plot-grow">
+        <span class="plot-swatch plot-swatch-3">h(x) =</span>
+        <input class="app-input-text" id="F3" type="text" autocomplete="off" spellcheck="false" aria-label="Third function of x">
+      </div>
+      <div class="tool-row is-end">
+        <div class="tool-switch" role="group" aria-label="Choose graph or table">
+          <button class="app-btn" type="button" id="VIEW-GRAPH" aria-pressed="true">Graph</button>
+          <button class="app-btn" type="button" id="VIEW-TABLE" aria-pressed="false">Table</button>
+        </div>
+        <button class="app-btn" type="button" id="RESET-VIEW">Reset view</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="plot"></div>
+    </div>
+    <div class="plot-sliders" id="SLIDERS"></div>
+    <div class="tool-stage plot-stage" id="STAGE" data-view="graph">
+      <canvas class="plot-canvas" id="CANVAS"></canvas>
+      <p class="tool-note" id="STATUS"></p>
+      <table class="app-table-view plot-table" id="TABLE">
+        <caption class="tool-note">Values at even intervals across the visible range</caption>
+        <thead id="TABLE-HEAD"></thead>
+        <tbody id="TABLE-BODY"></tbody>
+      </table>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/expression.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

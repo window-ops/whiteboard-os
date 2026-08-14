@@ -1,61 +1,87 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ambient Sounds</title>
+    <title>Water Ambience</title>
+    <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/windows-ui.css">
     <link rel="stylesheet" href="../css/winui-icons.css">
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
   </head>
-  <body>
-    <main>
-      <div class="widget card-style">
-        <h2>Water Stream 1</h2>
-        <p>Click to play or pause the sound.</p>
-        <audio id="audio1" loop>
-          <source src="./sounds/Water Stream 1.mp3" type="audio/mpeg">
-        </audio>
-        <button class="app-btn" id="play-pause-button1">Play</button>
-        <input id="volume-slider1" type="range" min="0" max="1" step="0.1" value="1">
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row wos-docs" data-kind="ambience"></div>
+      <div class="tool-row is-end">
+        <button class="app-btn" type="button" id="STOP-ALL">Stop everything</button>
       </div>
-      <div class="widget card-style">
-        <h2>Water Stream 2</h2>
-        <p>Click to play or pause the sound.</p>
-        <audio id="audio2" loop>
-          <source src="./sounds/Water Stream 2.mp3" type="audio/mpeg">
-        </audio>
-        <button class="app-btn" id="play-pause-button2">Play</button>
-        <input id="volume-slider2" type="range" min="0" max="1" step="0.1" value="1">
-      </div>
-      <div class="widget card-style">
-        <h2>Water Stream 3</h2>
-        <p>Click to play or pause the sound.</p>
-        <audio id="audio3" loop>
-          <source src="./sounds/Water Stream 3.mp3" type="audio/mpeg">
-        </audio>
-        <button class="app-btn" id="play-pause-button3">Play</button>
-        <input id="volume-slider3" type="range" min="0" max="1" step="0.1" value="1">
-      </div>
-      <div class="widget card-style">
-        <h2>Water Stream 4</h2>
-        <p>Click to play or pause the sound.</p>
-        <audio id="audio4" loop>
-          <source src="./sounds/Water Stream 4.mp3" type="audio/mpeg">
-        </audio>
-        <button class="app-btn" id="play-pause-button4">Play</button>
-        <input id="volume-slider4" type="range" min="0" max="1" step="0.1" value="1">
-      </div>
-      <div class="widget card-style">
-        <h2>Background Music</h2>
-        <p>Click to play or pause the sound.</p>
-        <audio id="audio5" loop>
-          <source src="./sounds/Background Music.mp3" type="audio/mpeg">
-        </audio>
-        <button class="app-btn" id="play-pause-button5">Play</button>
-        <input id="volume-slider5" type="range" min="0" max="1" step="0.1" value="1">
-      </div>
-    </main>
+    </div>
+    <div class="tool-stage">
+      <main class="sound-grid" aria-label="Ambient sounds">
+        <section class="widget card-style sound">
+          <h2 class="sound-name">Water Stream 1</h2>
+          <audio id="audio1" class="sound-audio" loop preload="none">
+            <source src="./sounds/Water Stream 1.mp3" type="audio/mpeg">
+          </audio>
+          <button class="app-btn sound-toggle" type="button" id="play-pause-button1" aria-pressed="false">Play</button>
+          <label class="sound-volume-label">
+            Volume
+            <input class="sound-volume" id="volume-slider1" type="range" min="0" max="1" step="0.05" value="1">
+          </label>
+        </section>
+        <section class="widget card-style sound">
+          <h2 class="sound-name">Water Stream 2</h2>
+          <audio id="audio2" class="sound-audio" loop preload="none">
+            <source src="./sounds/Water Stream 2.mp3" type="audio/mpeg">
+          </audio>
+          <button class="app-btn sound-toggle" type="button" id="play-pause-button2" aria-pressed="false">Play</button>
+          <label class="sound-volume-label">
+            Volume
+            <input class="sound-volume" id="volume-slider2" type="range" min="0" max="1" step="0.05" value="1">
+          </label>
+        </section>
+        <section class="widget card-style sound">
+          <h2 class="sound-name">Water Stream 3</h2>
+          <audio id="audio3" class="sound-audio" loop preload="none">
+            <source src="./sounds/Water Stream 3.mp3" type="audio/mpeg">
+          </audio>
+          <button class="app-btn sound-toggle" type="button" id="play-pause-button3" aria-pressed="false">Play</button>
+          <label class="sound-volume-label">
+            Volume
+            <input class="sound-volume" id="volume-slider3" type="range" min="0" max="1" step="0.05" value="1">
+          </label>
+        </section>
+        <section class="widget card-style sound">
+          <h2 class="sound-name">Water Stream 4</h2>
+          <audio id="audio4" class="sound-audio" loop preload="none">
+            <source src="./sounds/Water Stream 4.mp3" type="audio/mpeg">
+          </audio>
+          <button class="app-btn sound-toggle" type="button" id="play-pause-button4" aria-pressed="false">Play</button>
+          <label class="sound-volume-label">
+            Volume
+            <input class="sound-volume" id="volume-slider4" type="range" min="0" max="1" step="0.05" value="1">
+          </label>
+        </section>
+        <section class="widget card-style sound">
+          <h2 class="sound-name">Background Music</h2>
+          <audio id="audio5" class="sound-audio" loop preload="none">
+            <source src="./sounds/Background Music.mp3" type="audio/mpeg">
+          </audio>
+          <button class="app-btn sound-toggle" type="button" id="play-pause-button5" aria-pressed="false">Play</button>
+          <label class="sound-volume-label">
+            Volume
+            <input class="sound-volume" id="volume-slider5" type="range" min="0" max="1" step="0.05" value="1">
+          </label>
+        </section>
+      </main>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
     <script src="./js/script.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
   </body>
 </html>

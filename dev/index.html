@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Developer Notes</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide-select">
+        <span id="DOCUMENT-LABEL">Document</span>
+        <div class="app-select-menu">
+          <select id="DOCUMENT" aria-labelledby="DOCUMENT-LABEL"></select>
+        </div>
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="PREVIOUS" title="Previous document" aria-label="Previous document"><i class="icons10-arrow-left" aria-hidden="true"></i></button>
+        <button class="app-btn" type="button" id="NEXT" title="Next document" aria-label="Next document"><i class="icons10-arrow-right" aria-hidden="true"></i></button>
+      </div>
+      <div class="tool-row is-end" id="SOURCE-ROW" hidden>
+        <span class="tool-note" id="SOURCE"></span>
+      </div>
+    </div>
+    <div class="tool-stage" id="STAGE">
+      <article class="dev-page" id="PAGE"></article>
+    </div>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="./js/pages.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

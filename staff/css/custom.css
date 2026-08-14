@@ -1,0 +1,34 @@
+.staff {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  touch-action: none;
+  cursor: crosshair;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid var(--color-ui-border-default);
+}
+
+.staff .staff-line,
+.staff .staff-ledger {
+  stroke: #222222;
+  stroke-width: 1.6;
+}
+
+.staff .staff-note {
+  fill: #111111;
+}
+
+.staff .staff-note.is-sounding {
+  fill: #c92a2a;
+}
+
+.staff .staff-label {
+  fill: #666666;
+  font-size: 13px;
+}
+
+.staff .staff-clef {
+  fill: #111111;
+  font-size: 96px;
+}

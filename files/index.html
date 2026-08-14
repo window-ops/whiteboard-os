@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Files</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide">
+        <span>Current directory</span>
+        <input class="app-input-text" id="PATH" type="text" value="/" autocomplete="off" spellcheck="false" aria-label="Current directory">
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="UP" aria-label="Go to the parent directory">Up</button>
+        <button class="app-btn" type="button" id="NEW-DIR">New folder</button>
+        <button class="app-btn" type="button" id="NEW-FILE">New file</button>
+      </div>
+      <div class="tool-row is-end">
+        <span class="files-quota tool-note" id="QUOTA"></span>
+      </div>
+    </div>
+    <div class="files-prompt" id="PROMPT" hidden></div>
+    <div class="files-layout">
+      <section class="files-pane" aria-label="Directory listing">
+        <table class="files-table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Size</th>
+              <th scope="col">Changed</th>
+              <th scope="col"><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="LISTING"></tbody>
+        </table>
+      </section>
+      <section class="files-viewer" aria-label="File contents">
+        <h2 class="files-subhead" id="VIEWER-NAME">Nothing selected</h2>
+        <textarea class="app-textarea files-content" id="CONTENT" spellcheck="false" aria-label="File contents"></textarea>
+        <div class="tool-row files-actions">
+          <button class="app-btn app-btn-primary" type="button" id="SAVE" disabled>Save changes</button>
+          <button class="app-btn" type="button" id="RENAME" disabled>Rename</button>
+          <button class="app-btn" type="button" id="DELETE" disabled>Delete</button>
+        </div>
+        <p class="tool-note" id="STATUS"></p>
+      </section>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+.molar-formula {
+  font-size: 18px;
+  font-family: monospace;
+}
+
+.molar-card {
+  width: 100%;
+  max-width: 760px;
+  padding: 18px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+  text-align: center;
+}
+
+.molar-result {
+  margin: 0 0 6px 0;
+  font-size: clamp(22px, 3.6vw, 34px);
+}
+
+.molar-breakdown {
+  width: 100%;
+  max-width: 760px;
+}
+
+.molar-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.molar-table th,
+.molar-table td {
+  padding: 6px 10px 6px 0;
+  text-align: right;
+  border-bottom: 1px solid var(--color-ui-border-default);
+}
+
+.molar-table th:first-child,
+.molar-table td:first-child {
+  text-align: left;
+}
+
+.molar-table thead th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.molar-table td {
+  font-variant-numeric: tabular-nums;
+}
+
+.molar-breakdown .tool-note:last-child {
+  margin-top: 8px;
+}

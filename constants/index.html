@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Physical Constants</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide">
+        <span>Search</span>
+        <input class="app-input-text" id="SEARCH" type="search" autocomplete="off" placeholder="mass, charge, gravitation" aria-label="Search the constants">
+      </div>
+      <div class="tool-field is-wide-select">
+        <span id="GROUP-LABEL">Group</span>
+        <div class="app-select-menu">
+          <select id="GROUP" aria-labelledby="GROUP-LABEL"></select>
+        </div>
+      </div>
+    </div>
+    <div class="tool-stage">
+      <table class="constants-table">
+        <thead>
+          <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Value</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Uncertainty</th>
+          </tr>
+        </thead>
+        <tbody id="TABLE-BODY"></tbody>
+      </table>
+      <p class="tool-note constants-source">Values follow the 2018 CODATA adjustment, which the present SI is built on. Seven of them are exact because the base units are defined from them.</p>
+    </div>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

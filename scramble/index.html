@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Scrambler</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row">
+        <div class="tool-switch" role="group" aria-label="Choose what to scramble">
+          <button class="app-btn" type="button" id="MODE-WORDS" aria-pressed="true">Word order</button>
+          <button class="app-btn" type="button" id="MODE-LETTERS" aria-pressed="false">Letters</button>
+        </div>
+      </div>
+      <div class="tool-field is-wide-select">
+        <span id="LEVEL-LABEL">Difficulty</span>
+        <div class="app-select-menu">
+          <select id="LEVEL" aria-labelledby="LEVEL-LABEL">
+            <option value="1">Gentle, small changes</option>
+            <option value="2" selected>Normal</option>
+            <option value="3">Hard, nothing left in place</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn app-btn-primary" type="button" id="SCRAMBLE">Scramble</button>
+        <button class="app-btn" type="button" id="REVEAL" aria-pressed="false">Reveal</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="scramble"></div>
+    </div>
+    <div class="tool-form-layout">
+      <label class="tool-form scramble-input" for="SOURCE">
+        <span>Sentences or words, one per line</span>
+        <textarea class="app-textarea" id="SOURCE" rows="10"></textarea>
+      </label>
+      <section class="tool-output">
+        <div class="scramble-list" id="OUTPUT" aria-live="polite"></div>
+      </section>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

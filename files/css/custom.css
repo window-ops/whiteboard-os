@@ -1,0 +1,133 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.files-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-ui-border-default);
+  background-color: var(--color-card-bg-default);
+}
+
+.files-prompt[hidden] {
+  display: none;
+}
+
+.files-prompt-label {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.files-prompt input {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.files-layout {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 0;
+  padding: 16px;
+}
+
+.files-pane {
+  flex: 1 1 340px;
+  min-width: 0;
+  overflow: auto;
+}
+
+.files-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.files-table th,
+.files-table td {
+  padding: 6px 10px 6px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--color-ui-border-default);
+}
+
+.files-table thead th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.files-table td:nth-child(2),
+.files-table th:nth-child(2) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.files-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.files-name:hover {
+  text-decoration: underline;
+}
+
+.files-kind {
+  display: block;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.files-row.is-selected {
+  background-color: var(--color-ui-active-default);
+}
+
+.files-viewer {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.files-subhead {
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  overflow-wrap: anywhere;
+}
+
+.files-content {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.files-actions {
+  gap: 10px;
+}

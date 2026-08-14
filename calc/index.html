@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide-select">
+        <span id="ANGLE-LABEL">Angles</span>
+        <div class="app-select-menu">
+          <select id="ANGLE" aria-labelledby="ANGLE-LABEL">
+            <option value="rad">Radians</option>
+            <option value="deg">Degrees</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-field is-tight">
+        <span>Significant figures</span>
+        <input class="app-input-text" id="PRECISION" type="number" min="2" max="15" step="1" value="10" aria-label="Significant figures">
+      </div>
+      <div class="tool-row">
+        <button class="app-btn" type="button" id="CLEAR-HISTORY">Clear history</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="calc"></div>
+    </div>
+    <div class="calc-layout">
+      <section class="calc-main" aria-label="Calculator">
+        <label class="calc-entry" for="LINE">
+          <span class="tool-note">Expression</span>
+          <input class="app-input-text calc-line" id="LINE" type="text" autocomplete="off" spellcheck="false" placeholder="3 km + 250 m in m">
+        </label>
+        <p class="calc-result tool-readout" id="RESULT" aria-live="polite"></p>
+        <p class="tool-note" id="STATUS"></p>
+        <h2 class="calc-subhead">History</h2>
+        <ol class="calc-history" id="HISTORY"></ol>
+      </section>
+      <section class="calc-side" aria-label="Reference">
+        <h2 class="calc-subhead">Variables</h2>
+        <table class="calc-table">
+          <tbody id="VARIABLES"></tbody>
+        </table>
+        <h2 class="calc-subhead">What it understands</h2>
+        <ul class="calc-help">
+          <li>Arithmetic with <code>+ - * / % ^</code> and brackets</li>
+          <li>Assignment: <code>x = 4</code>, then <code>x^2</code></li>
+          <li><code>ans</code> holds the previous result</li>
+          <li>Functions: sin, cos, tan, asin, acos, atan, sqrt, cbrt, abs, ln, log, log2, exp, floor, ceil, round, sign, min, max, gcd, lcm, fact</li>
+          <li>Constants: pi, e, phi, c (light), g0 (gravity)</li>
+          <li>Units: <code>3 km + 250 m in m</code>, <code>90 min in h</code></li>
+          <li>Percentages: <code>200 + 15%</code></li>
+          <li>Bases: <code>0x1f</code>, <code>0b1011</code>, and <code>255 in hex</code></li>
+        </ul>
+      </section>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/engine.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

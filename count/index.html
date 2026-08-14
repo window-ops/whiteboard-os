@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Text Counter</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide-select">
+        <span id="LANG-LABEL">Language</span>
+        <div class="app-select-menu">
+          <select id="LANG" aria-labelledby="LANG-LABEL"></select>
+        </div>
+      </div>
+      <div class="tool-field is-tight">
+        <span>Reading speed, words per minute</span>
+        <input class="app-input-text" id="WPM" type="number" min="60" max="400" step="10" value="150" aria-label="Reading speed in words per minute">
+      </div>
+      <div class="tool-row is-end">
+        <div class="tool-switch" role="group" aria-label="Choose plain text or split words">
+          <button class="app-btn" type="button" id="VIEW-TEXT" aria-pressed="true">Text</button>
+          <button class="app-btn" type="button" id="VIEW-SPLIT" aria-pressed="false">Syllables</button>
+        </div>
+      </div>
+    </div>
+    <div class="count-layout">
+      <label class="count-input" for="TEXT">
+        <span class="tool-note">Text</span>
+        <textarea class="app-textarea" id="TEXT" spellcheck="false"></textarea>
+      </label>
+      <section class="count-side" aria-label="Counts">
+        <dl class="count-figures">
+          <dt>Characters</dt>
+          <dd class="tool-readout" id="CHARS">0</dd>
+          <dt>Characters without spaces</dt>
+          <dd class="tool-readout" id="CHARS-NS">0</dd>
+          <dt>Words</dt>
+          <dd class="tool-readout" id="WORDS">0</dd>
+          <dt>Sentences</dt>
+          <dd class="tool-readout" id="SENTENCES">0</dd>
+          <dt>Syllables</dt>
+          <dd class="tool-readout" id="SYLLABLES">0</dd>
+          <dt>Reading time</dt>
+          <dd class="tool-readout" id="READING">0:00</dd>
+          <dt>Longest word</dt>
+          <dd class="tool-readout" id="LONGEST">-</dd>
+        </dl>
+        <p class="tool-note" id="STATUS"></p>
+        <div class="count-split" id="SPLIT" hidden aria-live="polite"></div>
+      </section>
+    </div>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/languages.js"></script>
+    <script src="./js/hyphen.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

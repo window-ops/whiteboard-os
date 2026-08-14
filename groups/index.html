@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Group Shuffler</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row wos-docs" data-kind="groups"></div>
+    </div>
+    <div class="tool-form-layout">
+      <section class="tool-form" aria-label="Grouping settings">
+        <label for="NAMES">
+          <span>Names, one per line</span>
+          <textarea class="app-textarea" id="NAMES" rows="8"></textarea>
+        </label>
+        <label for="SPLIT">
+          <span>Divide by</span>
+          <span class="app-select-menu">
+            <select id="SPLIT">
+              <option value="groups">Number of groups</option>
+              <option value="size">Group size</option>
+            </select>
+          </span>
+        </label>
+        <label for="AMOUNT">
+          <span id="AMOUNT-LABEL">Groups</span>
+          <input class="app-input-text" id="AMOUNT" type="number" min="1" max="40" step="1" value="4">
+        </label>
+        <label class="check-row" for="KEEP">
+          <input class="app-checkbox" id="KEEP" type="checkbox">
+          <span>Keep the list in the address</span>
+        </label>
+        <div class="tool-row">
+          <button class="app-btn app-btn-primary" type="button" id="SHUFFLE">Shuffle</button>
+        </div>
+      </section>
+      <section class="tool-output" aria-label="Groups">
+        <p class="tool-note" id="STATUS">Paste a list of names, then shuffle</p>
+        <div class="group-board" id="BOARD" aria-live="polite"></div>
+      </section>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

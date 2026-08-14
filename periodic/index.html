@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Periodic Table</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide-select">
+        <span id="OVERLAY-LABEL">Colour by</span>
+        <div class="app-select-menu">
+          <select id="OVERLAY" aria-labelledby="OVERLAY-LABEL">
+            <option value="cat">Category</option>
+            <option value="en">Electronegativity</option>
+            <option value="r">Covalent radius</option>
+            <option value="ie">First ionisation energy</option>
+            <option value="mass">Atomic mass</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-row is-end pt-legend" id="LEGEND" hidden>
+        <span class="pt-legend-low" id="LEGEND-LOW"></span>
+        <span class="pt-legend-bar" aria-hidden="true"></span>
+        <span class="pt-legend-high" id="LEGEND-HIGH"></span>
+      </div>
+    </div>
+    <div class="tool-stage is-fitted">
+      <div class="pt-grid-wrap">
+        <div class="pt-grid" id="GRID" role="grid" aria-label="Periodic table"></div>
+      </div>
+      <section class="pt-detail" id="DETAIL" aria-live="polite" hidden></section>
+    </div>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="./js/elements.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

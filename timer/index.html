@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Timer</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide-select">
+        <span id="MODE-LABEL">Mode</span>
+        <div class="app-select-menu">
+          <select id="MODE" aria-labelledby="MODE-LABEL">
+            <option value="countdown">Countdown</option>
+            <option value="stopwatch">Stopwatch</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-field is-tight" id="DURATION-FIELD">
+        <span>Minutes</span>
+        <input class="app-input-text" id="MINUTES" type="number" min="0" max="180" step="1" value="5" aria-label="Minutes">
+      </div>
+      <div class="tool-field is-tight" id="SECONDS-FIELD">
+        <span>Seconds</span>
+        <input class="app-input-text" id="SECONDS" type="number" min="0" max="59" step="1" value="0" aria-label="Seconds">
+      </div>
+      <div class="tool-field is-wide-select">
+        <span id="SIGNAL-LABEL">End signal</span>
+        <div class="app-select-menu">
+          <select id="SIGNAL" aria-labelledby="SIGNAL-LABEL">
+            <option value="visual">Flash only</option>
+            <option value="chime">Flash and chime</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-field" id="VOLUME-FIELD">
+        <span>Chime volume</span>
+        <input id="VOLUME" type="range" min="0" max="1" step="0.05" value="0.5" aria-label="Chime volume">
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn app-btn-primary" type="button" id="START">Start</button>
+        <button class="app-btn" type="button" id="RESET">Reset</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="timer"></div>
+    </div>
+    <div class="tool-stage is-centred">
+      <p class="timer-readout tool-readout" id="READOUT" role="timer" aria-live="off">05:00</p>
+      <p class="tool-note" id="STATUS">Ready.</p>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+.colour-layout {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 22px 32px;
+  min-height: 0;
+  padding: 16px;
+  overflow: auto;
+}
+
+.colour-wheel-wrap {
+  flex: 0 1 340px;
+  min-width: 240px;
+}
+
+.colour-wheel {
+  width: 100%;
+  height: auto;
+}
+
+.colour-wheel .is-picked {
+  stroke: var(--color-text-default);
+  stroke-width: 2.5;
+}
+
+.colour-side {
+  flex: 1 1 300px;
+  max-width: 460px;
+  min-width: 0;
+}
+
+.colour-side > *:first-child {
+  margin-top: 0;
+}
+
+.colour-side > *:last-child {
+  margin-bottom: 0;
+}
+
+.colour-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.colour-swatch {
+  width: 108px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--color-ui-border-default);
+}
+
+.colour-chip {
+  height: 68px;
+}
+
+.colour-code {
+  padding: 5px 7px;
+  font-family: monospace;
+  font-size: 12px;
+  background-color: var(--color-card-bg-default);
+}
+
+.colour-subhead {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.colour-mixers {
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.colour-mix-result {
+  height: 56px;
+  margin: 12px 0 6px 0;
+  border-radius: 6px;
+  border: 1px solid var(--color-ui-border-default);
+}

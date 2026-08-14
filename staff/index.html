@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Staff</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-row">
+        <div class="tool-switch" role="group" aria-label="Choose the clef">
+          <button class="app-btn" type="button" id="CLEF-TREBLE" aria-pressed="true">Treble</button>
+          <button class="app-btn" type="button" id="CLEF-BASS" aria-pressed="false">Bass</button>
+        </div>
+      </div>
+      <div class="tool-field is-tight">
+        <span>Tempo, beats per minute</span>
+        <input class="app-input-text" id="BPM" type="number" min="30" max="200" step="1" value="80" aria-label="Playback tempo">
+      </div>
+      <div class="tool-field is-tight">
+        <span>Volume</span>
+        <input id="VOLUME" type="range" min="0" max="1" step="0.05" value="0.4" aria-label="Volume">
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn app-btn-primary" type="button" id="PLAY">Play</button>
+        <button class="app-btn" type="button" id="UNDO">Remove last</button>
+        <button class="app-btn" type="button" id="CLEAR">Clear</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="staff"></div>
+    </div>
+    <div class="tool-stage is-stacked">
+      <svg class="staff" id="STAFF" viewBox="0 0 900 260" role="img" aria-label="Staff"></svg>
+      <p class="tool-note" id="STATUS">Click on the staff to place a note.</p>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

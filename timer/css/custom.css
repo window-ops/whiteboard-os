@@ -1,0 +1,31 @@
+.timer-readout {
+  margin: 0;
+  font-size: clamp(64px, 18vw, 200px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.timer-readout.is-elapsed {
+  opacity: 0.6;
+}
+
+body.is-finished {
+  animation: timer-flash 0.7s steps(1, end) 6;
+}
+
+@keyframes timer-flash {
+  0%, 50% {
+    background-color: var(--color-background-default);
+  }
+  51%, 100% {
+    background-color: var(--color-ui-hover-strong);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-finished {
+    animation: none;
+    outline: 6px solid var(--color-input-border-strong);
+    outline-offset: -6px;
+  }
+}

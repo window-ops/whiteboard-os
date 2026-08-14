@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IPA Keyboard</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-wide">
+        <span>Transcription</span>
+        <input class="app-input-text ipa-line" id="LINE" type="text" autocomplete="off" spellcheck="false" aria-label="Transcription">
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn" type="button" id="SLASHES">Add / /</button>
+        <button class="app-btn" type="button" id="BRACKETS">Add [ ]</button>
+        <button class="app-btn" type="button" id="BACK" aria-label="Delete the last character">Delete</button>
+        <button class="app-btn" type="button" id="CLEAR">Clear</button>
+        <button class="app-btn" type="button" id="COPY">Copy</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="ipa"></div>
+    </div>
+    <div class="tool-stage" id="CHART"></div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/symbols.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

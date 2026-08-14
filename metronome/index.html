@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Metronome</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/windows-ui.css">
+    <link rel="stylesheet" href="../css/winui-icons.css">
+    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body class="tool">
+    <div class="tool-bar">
+      <div class="tool-field is-tight">
+        <span>Tempo, beats per minute</span>
+        <input class="app-input-text" id="BPM" type="number" min="20" max="300" step="1" value="90" aria-label="Tempo in beats per minute">
+      </div>
+      <div class="tool-field is-wide-select">
+        <span id="METER-LABEL">Time signature</span>
+        <div class="app-select-menu">
+          <select id="METER" aria-labelledby="METER-LABEL">
+            <option value="2/4">2/4</option>
+            <option value="3/4">3/4</option>
+            <option value="4/4" selected>4/4</option>
+            <option value="5/4">5/4</option>
+            <option value="6/8">6/8</option>
+            <option value="7/8">7/8</option>
+            <option value="9/8">9/8</option>
+            <option value="12/8">12/8</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-field is-wide-select">
+        <span id="SUB-LABEL">Subdivision</span>
+        <div class="app-select-menu">
+          <select id="SUB" aria-labelledby="SUB-LABEL">
+            <option value="1">Beats only</option>
+            <option value="2">Eighths</option>
+            <option value="3">Triplets</option>
+            <option value="4">Sixteenths</option>
+          </select>
+        </div>
+      </div>
+      <div class="tool-field is-tight">
+        <span>Volume</span>
+        <input id="VOLUME" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Volume">
+      </div>
+      <div class="tool-row is-end">
+        <button class="app-btn" type="button" id="TAP">Tap tempo</button>
+        <button class="app-btn app-btn-primary" type="button" id="START">Start</button>
+      </div>
+      <div class="tool-row wos-docs" data-kind="metronome"></div>
+    </div>
+    <div class="tool-stage is-centred">
+      <p class="metro-tempo tool-readout" id="TEMPO-READOUT">90</p>
+      <div class="metro-beats" id="BEATS" aria-hidden="true"></div>
+      <p class="tool-note" id="STATUS">Stopped.</p>
+    </div>
+    <script src="../js/wos-fs.js"></script>
+    <script src="../js/formats.js"></script>
+    <script src="../js/tool-state.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tool-docs.js" defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
