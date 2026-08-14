@@ -56,9 +56,6 @@ category:
 - [Interface conventions](docs/interface.md)
 - [Handling untrusted input](SECURITY.md)
 
-The help panel beside each application is written for the person teaching and
-carries nothing from the documents above.
-
 ## Third party material
 
 - Windows UI, by Vivek Verma, MIT. `css/windows-ui.css`.
